@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS resumes_db;
-CREATE DATABASE resumes_db;
-USE resumes_db;
+DROP DATABASE IF EXISTS `e5lrwvctj4avryxq`;
+CREATE DATABASE `e5lrwvctj4avryxq`;
+USE `e5lrwvctj4avryxq`;
 
 CREATE TABLE resumes(
     id INT NOT NULL AUTO_INCREMENT,
