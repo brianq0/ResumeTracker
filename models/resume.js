@@ -6,13 +6,13 @@ var resume = {
             cb(res);
         });
     },
-    create: function (column, value, cb) {
+    create: function (value, cb) {
         orm.create("resumes", value, function (res) {
             cb(res);
         });
     },
-    update: function (column, condition, cb) {
-        orm.update("resumes", column, condition, function (res) {
+    update: function (columnObj, id, cb) {
+        orm.update("resumes", id, columnObj, function (res) {
             cb(res);
         });
     },

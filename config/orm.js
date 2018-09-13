@@ -9,14 +9,15 @@ const orm = {
         })
     },
     create: function (table, info, cb) {
-        var queryString = `INSERT INTO ${table} (resName, resScore) VALUES = (?, ?)`;
+        var queryString = `INSERT INTO ${table} (resName, resLiked) VALUES = (?, ?)`;
         connection.query(queryString, info, (err, data) => {
             if (err) throw err;
+            console.log('orm, create data. NEED ID', data)
             cb(data);
         })
     },
-    update: function (table, set, where, cb) {
-        var queryString = `UPDATE FROM ${table} SET ${set} WHERE ${where}`;
+    update: function (table, columnObj, id, cb) {
+        var queryString = `UPDATE FROM ${table} SET ${columnObj} WHERE id = ${id}`;
         connection.query(queryString, (err, data) => {
             if (err) throw err;
             cb(data);
