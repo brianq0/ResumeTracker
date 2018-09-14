@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Bad+Script');
+
 body {
     margin: 0;
     padding: 0;
@@ -7,6 +9,7 @@ body {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1;
     height: 100vh;
+    background-color: black;
 
 }
 
@@ -21,29 +24,119 @@ body::before {
     z-index: -1;
     background-image: url(../img/rawpixel-626045-unsplash.jpg);
     background-size: cover;
-}
-
-.bg-container {
-    display: grid;
 
 }
+
+h1 {
+    margin: 0;
+    text-decoration: underline
+}
+
+h2 {
+    color: rgba(0, 0, 0);
+
+}
+
+ul {
+    position: relative;
+    top: 12px;
+}
+
+ul>li {
+    font-size: 1.3em;
+    text-align: right;
+    font-weight: 600;
+    line-height: 1.55;
+    font-family: 'Bad Script', 'Courier New', Courier, monospace;
+}
+
+button i {
+    padding: 3px;
+    border-radius: 30px;
+
+}
+
+.delete-resume {
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px black solid;
+}
+
+.delete-resume:hover {
+    color: white;
+    background-color: #000;
+}
+
 
 .bg-image {
     background-image: url(../img/Legal-pad-background.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-    opacity: 1;
+    opacity: .95;
     width: 100%;
     z-index: -1;
     grid-column: 3/11;
     grid-row: 1;
 
+
 }
 
 .content-wrapper {
+
     display: grid;
     position: relative;
-    grid-column: 4/10;
+    grid-column: 3/11;
+    width: 100%;
     grid-row: 1;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 10% repeat(3, 1fr);
+    /* grid-gap: 1em; */
+    justify-items: center;
+    /* overflow: auto; */
+    /* justify-items: center; */
+}
+
+
+.content-title {
+    grid-column: 3/5;
+}
+
+.content-good {
+    grid-column: 1/3;
+    grid-row: 2/4;
+    overflow: auto;
+    margin: 0 1.5em;
+
+
+}
+
+.content-good>ul>li {
+    text-align: left;
+
+}
+
+.content-bad>ul>li {
+    text-align: right;
+
+}
+
+.content-bad {
+    grid-column: 3/5;
+    grid-row: 2/4;
+    overflow: auto;
+    margin: 0 1.5em;
+
+
+}
+
+.content-bad>h2 {
+    text-align: right;
+}
+
+.content-new {
+    grid-row: 4;
+    grid-column: 1/-1
 }

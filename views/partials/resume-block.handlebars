@@ -2,8 +2,7 @@
     {{resName}}
 
     <button class="change-liked" data-id="{{id}}" data-newliked="{{#if liked}}{{liked}}{{else}}{{/if}}">
-        {{#if liked}}->BOTTOM OF THE PILE{{else}}->TOP OF THE PILE{{/if}}
-    </button>
+        {{#if liked}}<i class="fas fa-angle-right"></i>{{else}}<i class="fas fa-angle-left"></i>{{/if}} </button>
     <button class="delete-resume" data-id='{{id}}'>
         <i class="fas fa-trash-alt"></i>
     </button>
