@@ -4,7 +4,7 @@ const deleteButtons = document.querySelectorAll('button.delete-resume');
 deleteButtons.forEach(button => button.addEventListener('click', function () {
     fetch('/api/resumes/' + this.getAttribute('data-id'), {
         method: 'DELETE'
-    }).then(() => location.reload())
+    })
     location.reload();
 }))
 
@@ -20,10 +20,8 @@ document.getElementById('submitButton').addEventListener('click', e => {
         name: document.getElementById('ca').value,
         liked: radios
     }
-
     fetchRequest('api/resumes/new', 'POST', postObj).then(() => location.reload())
 })
-
 document.querySelectorAll('.change-liked').forEach(changeButton => {
     changeButton.addEventListener('click', function () {
         let currentAttr = this.getAttribute('data-newliked');
@@ -33,18 +31,17 @@ document.querySelectorAll('.change-liked').forEach(changeButton => {
             console.log(this.getAttribute('data-id'))
             fetchRequest('api/resumes/' + this.getAttribute('data-id'), 'PUT', {
                 resLiked: false
-            }).then(() => location.reload())
+            })
+            location.reload()
         } else {
             this.setAttribute('data-newliked', "true")
             console.log(this.getAttribute('data-id'))
             fetchRequest('api/resumes/' + this.getAttribute('data-id'), 'PUT', {
                 resLiked: true
-            }).then(() => location.reload())
+            })
+            location.reload()
 
         }
-
-
-
     })
 })
 
