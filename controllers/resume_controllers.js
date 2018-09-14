@@ -6,15 +6,13 @@ const resume = require('../models/resume.js');
 router.get('/', (req, res) => {
     console.log(req.body)
     resume.all((data) => {
-        console.log(data)
-        const allResumes = {
+        res.render("index", {
             resume: data
-        };
-        res.render("index", allResumes)
+        })
     })
 })
 
-router.post('/api/resumes', (req, res) => {
+router.post('/api/resumes/new', (req, res) => {
     resume.create([req.body.name, req.body.liked], result => {
         res.json({
             id: result.id
@@ -25,14 +23,16 @@ router.post('/api/resumes', (req, res) => {
 
 router.put('/api/resumes/:id', (req, res) => {
     console.log('controller put', req.body)
-    resume.update(req.body, req.params.id)
-    res.redirect('/')
+    resume.update(req.body, req.params.id, () => {
+        console.log(data);
+    })
 })
 
 
 router.delete('/api/resumes/:id', (req, res) => {
+    console.log('resume.delete');
     resume.delete(req.params.id, data => {
-        console.log(data);
+
     })
 })
 

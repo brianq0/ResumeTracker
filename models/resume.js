@@ -12,7 +12,7 @@ var resume = {
         });
     },
     update: function (columnObj, id, cb) {
-        orm.update("resumes", id, columnObj, function (res) {
+        orm.update("resumes", columnObj, id, function (res) {
             cb(res);
         });
     },

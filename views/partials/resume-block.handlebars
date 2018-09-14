@@ -1,11 +1,11 @@
 <li>
-    {{name}}
+    {{resName}}
 
-    <button class="change-liked" data-id="{{id}}" data-newliked="{{liked}}">
-        {{#if liked}}PUT IN STORAGE{{else}}TAKE OUT OF STORAGE{{/if}}
+    <button class="change-liked" data-id="{{id}}" data-newliked="{{#if liked}}{{liked}}{{else}}{{/if}}">
+        {{#if liked}}->BOTTOM OF THE PILE{{else}}->TOP OF THE PILE{{/if}}
     </button>
     <button class="delete-resume" data-id='{{id}}'>
-        X
+        SHRED RESUME
     </button>
 
 </li>

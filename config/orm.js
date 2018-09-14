@@ -9,7 +9,7 @@ const orm = {
         })
     },
     create: function (table, info, cb) {
-        var queryString = `INSERT INTO ${table} (resName, resLiked) VALUES = (?, ?)`;
+        var queryString = `INSERT INTO ${table} (resName, resLiked) VALUES (?, ?)`;
         connection.query(queryString, info, (err, data) => {
             if (err) throw err;
             console.log('orm, create data. NEED ID', data)
@@ -17,7 +17,7 @@ const orm = {
         })
     },
     update: function (table, columnObj, id, cb) {
-        var queryString = `UPDATE FROM ${table} SET ${columnObj} WHERE id = ${id}`;
+        var queryString = `UPDATE ${table} SET resLiked = ${columnObj.resLiked} WHERE id = ${id}`;
         connection.query(queryString, (err, data) => {
             if (err) throw err;
             cb(data);
