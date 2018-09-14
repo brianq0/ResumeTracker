@@ -32,10 +32,6 @@ h1 {
     text-decoration: underline
 }
 
-h2 {
-    color: rgba(0, 0, 0);
-
-}
 
 ul {
     position: relative;
@@ -56,16 +52,6 @@ button i {
 
 }
 
-.delete-resume {
-    border-radius: 5px;
-    background-color: transparent;
-    border: 1px black solid;
-}
-
-.delete-resume:hover {
-    color: white;
-    background-color: #000;
-}
 
 
 .bg-image {
@@ -93,10 +79,8 @@ button i {
     height: 100vh;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 10% repeat(3, 1fr);
-    /* grid-gap: 1em; */
     justify-items: center;
-    /* overflow: auto; */
-    /* justify-items: center; */
+
 }
 
 
@@ -139,4 +123,38 @@ button i {
 .content-new {
     grid-row: 4;
     grid-column: 1/-1
+}
+
+.delete-resume {
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px black solid;
+}
+
+.delete-resume:hover {
+    color: #EBE298;
+    background-color: #000;
+}
+
+.change-liked {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.content-good .change-liked:hover {
+    border: 2px solid rgb(1, 167, 1)
+}
+
+.content-bad .change-liked:hover {
+    border: 2px solid red
+}
+
+.content-good .change-liked {
+    background-color: white;
+    color: rgb(1, 167, 1);
+}
+
+.content-bad .change-liked {
+    background-color: white;
+    color: red;
 }

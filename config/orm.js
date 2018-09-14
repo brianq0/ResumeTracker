@@ -12,7 +12,6 @@ const orm = {
         var queryString = `INSERT INTO ${table} (resName, resLiked) VALUES (?, ?)`;
         connection.query(queryString, info, (err, data) => {
             if (err) throw err;
-            console.log('orm, create data. NEED ID', data)
             cb(data);
         })
     },

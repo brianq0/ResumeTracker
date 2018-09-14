@@ -20,7 +20,7 @@ router.post('/api/resumes/new', (req, res) => {
         })
     })
 })
-
+//Sends a true/false response along with the associated id
 router.put('/api/resumes/:id', (req, res) => {
     resume.update(req.body, req.params.id, () => {})
 })

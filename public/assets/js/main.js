@@ -1,31 +1,33 @@
+//DELETE FUNCTION using data-id attribute
 const deleteButtons = document.querySelectorAll('button.delete-resume');
-
-
 deleteButtons.forEach(button => button.addEventListener('click', function () {
-    fetch('/api/resumes/' + this.getAttribute('data-id'), {
-        method: 'DELETE'
-    })
+    fetchRequest('/api/resumes/' + this.getAttribute('data-id'), 'DELETE')
     location.reload();
 }))
 
+//CREATE FUNCTION
 document.getElementById('submitButton').addEventListener('click', e => {
     e.preventDefault();
     let radios;
+    //Gets the values from the radio buttons
     Array.from(document.getElementsByName('liked'), radio => {
         if (radio.checked) {
             radios = radio.value
         }
     });
+    //Creates an object with the user-inputted values and makes a POST request
     let postObj = {
         name: document.getElementById('ca').value,
         liked: radios
     }
     fetchRequest('api/resumes/new', 'POST', postObj).then(() => location.reload())
 })
+
+//UPDATE FUNCTION
 document.querySelectorAll('.change-liked').forEach(changeButton => {
+    //Adds an event listener that toggles data attribute for each list item and updates the database accordingly
     changeButton.addEventListener('click', function () {
         let currentAttr = this.getAttribute('data-newliked');
-        console.log(currentAttr);
         if (currentAttr) {
             this.setAttribute('data-newliked', "")
             console.log(this.getAttribute('data-id'))
@@ -46,7 +48,6 @@ document.querySelectorAll('.change-liked').forEach(changeButton => {
 })
 
 function fetchRequest(url, method, data) {
-
     return fetch(url, {
         method,
         headers: {
